@@ -6,6 +6,16 @@ import Dog from "./Dog";
 import Cat from "./Cat";
 
 const App = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate('/cat/nabi')
+  }
+
+  const handleGoBack = () => {
+    navigate(-1)
+  }
+
   return (
     <div className="App">
 
@@ -21,7 +31,8 @@ const App = () => {
         <Route path="/cat/:cat_name" element={<Cat/>} />
         <Route path="/dog" element={<Dog/>} />
       </Routes>
-      <button>이전으로 가기</button>
+      <button onClick={handleGoBack}>이전으로 가기</button>
+      <button onClick={handleNavigation}>고양이로 가기</button>
     </div>
   );
 }
