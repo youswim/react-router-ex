@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 
 import Home from "./Home";
 import Dog from "./Dog";
@@ -10,12 +10,14 @@ class App extends React.Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route path="/cat" element={<Cat/>} />
+          <Route path="/cat/:cat_name" element={<Cat/>} />
           <Route path="/dog" element={<Dog/>} />
         </Routes>
       </div>
